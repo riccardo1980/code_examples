@@ -8,11 +8,10 @@ Tests a number of serial and parallel **sorting algorithms**.
 - serial: bubblesort, shakersort
 - OpenMP parallel: oddevensort, mergesort
 - c++11 thread-based: mergesort
+
+Requires [OpenMP][1] and [Threading Building Blocks][2].
  
- 
- Requires [OpenMP][1] and [Threading Building Blocks][2].
- 
- ### thrust_zip_iterator
+### thrust_zip_iterator
 Use example for **thrust::zip_iterator**.
 
 Requires [OpenMP][1] and [Thrust][3].
