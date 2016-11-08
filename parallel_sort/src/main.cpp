@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <stdexcept>
 #include <cstdlib>
 
@@ -93,12 +94,13 @@ int main (int argc, char *argv[]){
     std::generate( dd.begin(), dd.end(), myrand );
 
     vector<double> dd1 = dd;
+    cout << std::scientific << std::setprecision(2); 
    
     start = omp_get_wtime();
     std::sort( dd1.begin(), dd1.end() );
     stop = omp_get_wtime();
     cout << "std::sort" << endl
-      <<"Time:   " << stop - start << "[s]" << endl;
+      <<"Time:   " << stop - start << " [s]" << endl;
      
     int threads = omp_get_max_threads();
     
@@ -153,7 +155,8 @@ int main (int argc, char *argv[]){
     }
 
     cout << ss.str() << endl;
-    cout << "Time:   " << stop - start << "[s]" << endl;
+    cout << "Time:   " 
+      << stop - start << " [s]" << endl;
     cout << "Error:  " << L2relativeError( dd1.begin(), dd1.end(), dd2.begin() ) << endl; 
 
     //cout << dd1 << endl;    
