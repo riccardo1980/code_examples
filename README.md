@@ -16,6 +16,11 @@ Use example for **thrust::zip_iterator**.
 
 Requires [OpenMP][1] and [Thrust][3].
 
+### openmp_nested 
+Use example for OpenMP nested parallelism. 
+
+Requires [OpenMP][1].
+
 ## Author
 
 * **Riccardo Zanella** [riccardo1980](https://github.com/riccardo1980)

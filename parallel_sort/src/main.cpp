@@ -79,9 +79,9 @@ int main (int argc, char *argv[]){
     int k = 1;
     switch (argc){
       case 3:
-          k = atoi(argv[2]);
+        std::istringstream( argv[2] ) >> k;
       case 2:
-          N = atoi(argv[1]);
+        std::istringstream( argv[1] ) >> N;
         case 1:
           break;
         default:
