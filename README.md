@@ -19,18 +19,25 @@ CMAKE provided Find modules can be instructed to look for requested libraries in
 - `TBBROOT`: must point to base tbb folder (e.g. the one containing both `lib` and `include` folders of [Threading Building Blocks][2])
 - `THRUSTROOT`: must point to base thrust folder (e.g. the one containing `thrust/version.h`)
 
+For example, if you are using a Bash shell, type:
+
+```
+export THRUSTROOT=path_to_thrust    #substitute with your path!   
+export TBBROOT=path_to_tbb          #substitute with your path!
+```
+
 Clone the project, then use `cmake` on an empty build folder: for example, if you are interested in **parallel\_sort** code:
 
 ```
 git clone https://github.com/riccardo1980/code_examples
-cd code_examples
+cd code_examples/parallel_sort
 mkdir build
 cd build
-export THRUSTROOT=my_thrust_path    #substitute with your path!
-export TBBROOT=my_tbb_path          #substitute with your path!
-cmake ../parallel_sort
+cmake ..
 make
 ```
+
+Built executable can be found on `bin` folder.
 
 ## List of examples
 Source code of each example is collected in a separate folder.
