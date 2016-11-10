@@ -14,7 +14,7 @@ Some examples require only a subset of above libraries, so check the prerequisit
 
 ### Installation
 
-CMAKE provided Find modules can be instructed to look for requested libraries in non custom folders: use the followiong environment variables:
+CMAKE provided Find modules can be instructed to look for requested libraries in non custom folders: use the following environment variables:
 
 - `TBBROOT`: must point to base tbb folder (e.g. the one containing both `lib` and `include` folders of [Threading Building Blocks][2])
 - `THRUSTROOT`: must point to base thrust folder (e.g. the one containing `thrust/version.h`)
@@ -43,7 +43,7 @@ Implemented algorithms:
 - oddevensort, mergesort (OpenMP based implementation)
 - mergesort (based on C++11 std::thread)
 
-Code can call exterrnal sorting functions, such as: qsort, tbb::parallel_sort.
+Code can call external sorting functions, such as: qsort, tbb::parallel_sort.
  
 ### thrust_zip_iterator
 Use example for **thrust::zip_iterator**, requires [OpenMP][1] and [Thrust][3].
