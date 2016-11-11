@@ -42,6 +42,9 @@ Use example for **thrust::zip_iterator**, requires [OpenMP][1] and [Thrust][3].
 ### openmp_nested 
 Use example for OpenMP **nested parallelism**, requires [OpenMP][1].
 
+### MATLAB/Octave matlab_keyvalue
+Facilities for parsing key-value optional function parameters.
+
 ## Author
 
 * **Riccardo Zanella** [riccardo1980](https://github.com/riccardo1980)
