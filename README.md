@@ -10,19 +10,35 @@ In order to compile all the examples, the following libraries are required:
 - [Threading Building Blocks][2]
 - [Thrust][3]
 
-Some examples require only a subset of above libraries, so check the prerequisites of the code you are interested in.
+Some examples require only a subset of above libraries, so check the prerequisites of the code you are interested in. 
 
 ### Installation
+
+CMAKE provided Find modules can be instructed to look for requested libraries in non custom folders: use the following environment variables:
+
+- `TBBROOT`: must point to base tbb folder (e.g. the one containing both `lib` and `include` folders of [Threading Building Blocks][2])
+- `THRUSTROOT`: must point to base thrust folder (e.g. the one containing `thrust/version.h`)
+
+For example, if you are using a Bash shell, type:
+
+```
+export THRUSTROOT=path_to_thrust    #substitute with your path!   
+export TBBROOT=path_to_tbb          #substitute with your path!
+```
+
 Clone the project, then use `cmake` on an empty build folder: for example, if you are interested in **parallel\_sort** code:
 
 ```
 git clone https://github.com/riccardo1980/code_examples
-cd code_examples
+cd code_examples/parallel_sort
 mkdir build
 cd build
-cmake ../parallel_sort
+cmake ..
 make
 ```
+
+Built executable can be found on `bin` folder.
+
 ## List of examples
 Source code of each example is collected in a separate folder.
 
@@ -34,7 +50,7 @@ Implemented algorithms:
 - oddevensort, mergesort (OpenMP based implementation)
 - mergesort (based on C++11 std::thread)
 
-Code can call exterrnal sorting functions, such as: qsort, tbb::parallel_sort.
+Code can call external sorting functions, such as: qsort, tbb::parallel_sort.
  
 ### thrust_zip_iterator
 Use example for **thrust::zip_iterator**, requires [OpenMP][1] and [Thrust][3].

@@ -1,3 +1,8 @@
+# Users may modify the behavior of this module with the following environment
+# variables:
+#
+# * THRUSTROOT
+#
 # Try to find Thrust
 # Once done, this will define
 # THRUST_FOUND
@@ -8,6 +13,7 @@ find_path( THRUST_INCLUDE_DIR
   HINTS
   /usr/include/cuda
   /usr/local/cuda/include
+  $ENV{THRUSTROOT}
   DOC "Thrust headers"
   )
 
