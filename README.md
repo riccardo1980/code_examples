@@ -10,7 +10,7 @@ In order to compile all the examples, the following libraries are required:
 - [Threading Building Blocks][2]
 - [Thrust][3]
 
-Some examples require only a subset of above libraries, so check the prerequisites of the code you are interested in. 
+Some examples require only a subset of above libraries, so check the prerequisites of the code you are interested in.
 
 ### Installation
 
@@ -51,11 +51,27 @@ Implemented algorithms:
 - mergesort (based on C++11 std::thread)
 
 Code can call external sorting functions, such as: qsort, tbb::parallel_sort.
- 
+ **WARNING**:
+ If you find something like:  
+
+ ```
+ terminate called after throwing an instance of 'std::length_error'  
+  what():  basic_string::_S_create  
+Abort trap: 6
+
+ ```
+ or simply:  
+
+ ```
+ Segmentation fault: 11
+ ```
+
+ an incompatibility between GCC and tbb can be the cause, see [here][4] and [here][5] for details.
+
 ### thrust_zip_iterator
 Use example for **thrust::zip_iterator**, requires [OpenMP][1] and [Thrust][3].
 
-### openmp_nested 
+### openmp_nested
 Use example for OpenMP **nested parallelism**, requires [OpenMP][1].
 
 ### MATLAB/Octave matlab_keyvalue
@@ -66,11 +82,11 @@ Facilities for parsing key-value optional function parameters.
 * **Riccardo Zanella** [riccardo1980](https://github.com/riccardo1980)
 
 ## License
-This project is licensed under GPL v.2 - see the [LICENSE.txt](LICENSE.txt) file for details. 
+This project is licensed under GPL v.2 - see the [LICENSE.txt](LICENSE.txt) file for details.
 
 
 [1]: http://www.openmp.org
 [2]: https://www.threadingbuildingblocks.org
 [3]: https://github.com/thrust
-
-
+[4]: https://software.intel.com/en-us/forums/intel-threading-building-blocks/topic/675657
+[5]: https://software.intel.com/en-us/forums/intel-threading-building-blocks/topic/392681
